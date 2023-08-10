@@ -6,13 +6,12 @@ const tabs__arrow = document.querySelectorAll(".tabs__arrow_down")
 const main__button_gray = document.querySelectorAll(".main__button_gray");
 const tabs = document.querySelectorAll(".tabs");
 
-
+var b = 0;
 let a = 0;
 
 tabs__arrow.forEach(function(tabs__arrow, index1){
    tabs__arrow.addEventListener("click", function()
    { 
-
       if ((index1 >= 0) && (tabs__arrow.className.indexOf("up") == -1))
       {
          tabs__header.forEach(function(tabs__header, index2)
@@ -53,17 +52,11 @@ tabs__arrow.forEach(function(tabs__arrow, index1){
                      }
                   })
                }
-      
-
-
-
-            
-      
-
-
-
-
       /*--------------------------------------------------------------- */
+
+      tabs__header.forEach(function(){
+         b +=1;
+      })
 
       if (tabs__arrow.className.indexOf("up click") >= 0) 
       {
@@ -71,18 +64,15 @@ tabs__arrow.forEach(function(tabs__arrow, index1){
       }
 
 
-      if (a == 3) 
+      if (a == b) 
       {
          main__button_gray.forEach(function(item)
          {
              item.classList.remove("disabled");
          })
       }
+      b = 0;
 
    })
 
-
-
 })
-
-
